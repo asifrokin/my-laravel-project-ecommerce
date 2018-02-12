@@ -14,20 +14,30 @@
         </div>
     </div><!--/.row-->
     <div class="container">
+          
+           @if (Session::has('successMessage'))
+            <div class="alert-success">
+                {{ Session::has('successMessage') }}
+            </div> 
+            @endif
+        
       <div class="row">
         <div class="col-md-6">
-          <div class="form-group">
-            <label for="">Category Name</label>
-              <input type="text" name="CategoryName" class="form-control">
-    </div>
-     
-        <div class="form-group">
-          <label for="">Category Description</label>
-            <input type="text" name="CategoryDescription" class="form-control">
-   </div>
-        <div class="form-group">
-            <input type="submit"  class="form-control btn btn-success" value="Add Category">
-   </div>
+          <form action="{{ route('category.save') }}" method="post">
+                {{ csrf_field() }}
+            <div class="form-group">
+                <label for="">Category Name</label>
+                  <input type="text" name="CategoryName" class="form-control">
+        </div>
+         
+            <div class="form-group">
+              <label for="">Category Description</label>
+                <input type="text" name="CategoryDescription" class="form-control">
+       </div>
+            <div class="form-group">
+                <input type="submit"  class="form-control btn btn-success" value="Add Category">
+       </div>
+          </form>
     </div>
      </div>
       </div>
