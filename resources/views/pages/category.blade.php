@@ -17,7 +17,7 @@
           
            @if (Session::has('successMessage'))
             <div class="alert-success">
-                {{ Session::has('successMessage') }}
+                {{ Session::get('successMessage') }}
             </div> 
             @endif
         
@@ -26,14 +26,14 @@
           <form action="{{ route('category.save') }}" method="post">
                 {{ csrf_field() }}
             <div class="form-group">
-                <label for="">Category Name</label>
+                <label for=""> Name</label>
                   <input type="text" name="CategoryName" class="form-control">
-        </div>
+            </div>
          
             <div class="form-group">
-              <label for="">Category Description</label>
+              <label for=""> Description</label>
                 <input type="text" name="CategoryDescription" class="form-control">
-       </div>
+        </div>
             <div class="form-group">
                 <input type="submit"  class="form-control btn btn-success" value="Add Category">
        </div>

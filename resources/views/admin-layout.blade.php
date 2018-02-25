@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Lumino - Dashboard</title>
         
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/datepicker3.css" rel="stylesheet">
-        <link href="css/styles.css" rel="stylesheet">
+        <link href="{{ asset ('css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset ('css/datepicker3.css') }}" rel="stylesheet">
+        <link href="{{ asset ('css/styles.css') }}" rel="stylesheet">
         
         <!--Icons-->
         <script src="js/lumino.glyphs.js"></script>
@@ -25,14 +25,16 @@
         @yield('dashboard')
         @yield('category')
         @yield('products')
+        @yield('manage-category')
+        @yield('edit-category')
 
-        <script src="js/jquery-1.11.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/chart.min.js"></script>
-	<script src="js/chart-data.js"></script>
-	<script src="js/easypiechart.js"></script>
-	<script src="js/easypiechart-data.js"></script>
-	<script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+	<script src="{{ asset ('js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset ('js/chart.min.js') }}"></script>
+	<script src="{{ asset ('js/chart-data.js') }}"></script>
+	<script src="{{ asset ('js/easypiechart.js') }}"></script>
+	<script src="{{ asset ('js/easypiechart-data.js') }}"></script>
+	<script src="{{ asset ('js/bootstrap-datepicker.js') }}"></script>
 	<script>
 		$('#calendar').datepicker({
 		});
