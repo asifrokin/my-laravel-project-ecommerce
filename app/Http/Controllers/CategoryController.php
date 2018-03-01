@@ -10,7 +10,8 @@ class CategoryController extends Controller
 
     public function category() 
     {
-       return view ('pages.category');
+        $category = null;
+       return view ('pages.category.create-category')->with('category',$category);
     }
     public function saveCategory(Request $request){
         
@@ -29,7 +30,7 @@ class CategoryController extends Controller
     public  function editCategory ($id)
     {
         $category = Category::FindorFail($id);
-        return view ('pages.category.edit-category')->with('category',$category);
+        return view ('pages.category.create-category')->with('category',$category);
     }
 
     public function updateCategory(Request $request){
@@ -44,9 +45,9 @@ class CategoryController extends Controller
 
      public function deleteCategory($id){
         
-        $category= Category::findorFail($request->id);
+        $category= Category::findorFail($id);
         $category->delete();
  
-        return redirect()->route('category.manage')->with('successMessage', 'Category is deleted');
+     return redirect()->route('category.manage')->with('successMessage', 'Category is deleted');
      }
 }
